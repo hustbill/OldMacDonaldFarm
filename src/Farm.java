@@ -21,14 +21,6 @@ public class Farm {
 
 	}
 
-	public void animalSounds() {
-		Animal temp;
-		for (int i = 0; i < myFarm.size(); i++) {
-			temp = (Animal) myFarm.get(i);
-			System.out.println(temp.getType() + " goes " + temp.getSound());
-		}
-	}
-
 	public void sing() {
 		String  s = "";
 		

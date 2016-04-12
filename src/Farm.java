@@ -1,14 +1,24 @@
 import java.util.*;
-//http://www.chegg.com/homework-help/questions-and-answers/lab-assignment-a201-old-macdonald-background-lab-use-well-known-song-old-macdonald-farm-le-q1227365
-// http://www.comp.nus.edu.sg/~cs1020/tut/15s2/tut02/T2.pdf
-//http://kermit.kishwaukeecollege.edu/~dklick/cis260/
-public class Farm {
-	private ArrayList myFarm = new ArrayList();
 
-	public Farm() {
-		myFarm.add(new Cow("cow","moo"));
-		myFarm.add(new Dog());
-		myFarm.add(new Pig());
+public class Farm {
+	private ArrayList<Animal> myFarm = new ArrayList<Animal>();
+	private String farmName = "Old McDonald";
+
+	public Farm(String farmName) {
+		this.farmName = farmName;
+		
+		if (farmName == "Old McDonald") {
+			myFarm.add(new Cow("Cow", "Moo"));
+			myFarm.add(new Pig("Pig", "Oink"));
+			myFarm.add(new Dog("Dog", "Woof"));
+		}
+
+		if (farmName == "Vieux Maturin") {
+			myFarm.add(new Cow("Vache", "Meuh"));
+			myFarm.add(new Dog("Chien", "Ouah"));
+			myFarm.add(new Pig("Cochon", "Groin"));
+		}
+
 	}
 
 	public void animalSounds() {
@@ -18,11 +28,26 @@ public class Farm {
 			System.out.println(temp.getType() + " goes " + temp.getSound());
 		}
 	}
-	
-	
-	public void Sing(String[] a) {
-		String o = "Old MacDonald had a farm", e = ", Ee-i-ee-i-oh!", x = " a " + a[1], s = x + " " + a[1];
-		System.out.print(o + e + ",\nAnd on that farm he had a " + a[0] + e + ",\nWith" + s + " here and" + s
-				+ " there,\nHere" + x + ", there" + x + ", everywhere" + s + ",\n" + o + e + "!");
+
+	public void sing() {
+		String  s = "";
+		
+		for (Animal animal : myFarm) {
+			s += farmName + " had a farm, Ee-i-ee-i-oh!\n";       
+		            s += "And on that farm he had a " + animal.getType() + ", Ee-i-ee-i-oh!\n";
+		            s += "With a " + animal.getSound() + " here, \nAnd a "  + animal.getSound() +" there\n";
+		            s += "Here a " + animal.getSound() + ", there a " + animal.getSound() + ", \nEverywhere a "+ animal.getSound()  + "\n";
+		        s += farmName + " had a farm, Ee-I-ee-i-oh!\n";
+			System.out.print(s);
+		}
 	}
+
+	public String getFarmName() {
+		return farmName;
+	}
+
+	public void setFarmName(String farmName) {
+		this.farmName = farmName;
+	}
+
 }

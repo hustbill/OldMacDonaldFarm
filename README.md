@@ -2,10 +2,10 @@
 OldMacDonaldFarm  OOP coding questions
 
 ## Source code
-Animal.java - interface
-Cow.java, Dog.java, Pig.java - implementations of the Animal interface
-Farm.java - collection of Animal objects
-OldMacDonald.java - testing class
+- Animal.java - interface
+- Cow.java, Dog.java, Pig.java - implementations of the Animal interface
+- Farm.java - collection of Animal objects
+- OldMacDonald.java - testing class
 
 ## Description
 ```code
